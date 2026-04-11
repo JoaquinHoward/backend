@@ -1,0 +1,32 @@
+class Dog {
+    constructor(name, mixBreed) {
+        this.name = name;
+        this.mixBreed = mixBreed; // e.g., "labrador-retriever" or "beagle-labrador"
+    }
+}
+
+const myDogs = [
+    new Dog("Buddy", "labrador-retriever"),
+    new Dog("Luna", "husky-shepherd"),
+    new Dog("Rex", "beagle-labrador"),
+    new Dog("Bella", "poodle")
+];
+
+
+function matchBreed(breed){
+    const matchedBreed = myDogs.filter(dog => dog.mixBreed.includes(breed));
+
+    if(matchedBreed.length === 0){
+        console.log(`No matched breed ${breed}`);
+    }else{
+        console.log("Matched results: ");
+        matchedBreed.forEach(dog => {
+            console.log(`Dog name: ${dog.name}, mix breed: ${dog.mixBreed}`);
+        });
+    }
+}
+matchBreed("labrador");
+
+function matchHeighRange(height1, height2){
+    const matchedHeight = myDogs.filter(dog => dog.height >= height1 && dog => dog.height <= height2);
+}
