@@ -48,3 +48,14 @@ function matchAgeRange(age1, age2){
 
 matchAgeRange(1000, 2000);
 matchAgeRange(0, 100);
+
+const title = document.getElementById('title');
+title.textContent = "Healthcare - Patient Records Management";
+
+const patient_list = document.getElementById('patient-list');
+
+patients.forEach(patient => {
+    const li  = document.createElement('li');
+    li.textContent = `name: ${patient.name}, age: ${patient.age}, diagnosis: ${patient.diagnosis}, medication/s: ${patient.medications}`;
+    patient_list.appendChild(li);
+});
